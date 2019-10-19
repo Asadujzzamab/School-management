@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php require_once 'admin/includes/conn.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +51,7 @@
 	</div> 
 	<div class="row header-part">
 	<div class="col-md-1 col-xs-1">
-			<img src="img/q.jpg" class="himg" style="width:100px;height:100px;">
+			<img src="img/k.png" class="himg">
 		</div>
 		<div class="col-md-11 col-xs-11 right-part">
 			<h1 class="text-center hidden-xs">SHYAMOLI IDEAL POLYTECHNIC INSTITUTE</h1>
@@ -75,7 +75,7 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#" class="mylink"><i class="fa fa-home"></i>&nbsp; Home</a></li>					
+						<li><a href="index.php" class="mylink"><i class="fa fa-home"></i>&nbsp; Home</a></li>					
 						<li><a href="#" class="mylink"><i class="fa fa-th-large"></i>&nbsp; Facilities</a></li>
 						<li><a href="#" class="mylink"><i class="fa fa-graduation-cap"></i>&nbsp; Educaton</a></li>
 						<li><a href="#" class="mylink"><i class="fa fa-film"></i>&nbsp; Gallary</a></li>
@@ -96,7 +96,7 @@
 		<div class="col-md-2 left-sidebar" style="min-height: 700px;">
 			<h4>Departments</h4>
 			<ul class="imp-link">
-				<li><a href="department.php">Computer</a></li>
+				<li><a href="">Computer</a></li>
 				<li><a href="">Civil</a></li>
 				<li><a href="">Electrical</a></li>
 				<li><a href="">Mechanical</a></li>
@@ -106,37 +106,150 @@
 			</ul>
 		</div>
 		<div class="col-md-8">
-			<div id="slider">
-				<div class="cycle-slideshow" data-cycle-caption="#alt-caption" data-cycle-caption-template="{{alt}}" data-cycle-swipe="true" data-cycle-fx="TileSlide" data-cycle-timeout=2000>		
-				    <img src="img/l.jpg" alt="this is picture">
-				    <img src="img/p.png" alt="">
-				    <img src="img/04.jpg" alt="">
-				    
-					<span class="cycle-prev" id="prev">Prev</span>
-					<span class="cycle-next" id="next">Next</span>
+			<ul class="nav nav-tabs">
+				    <li><a data-toggle="tab" href="#home">1st</a></li>
+				    <li><a data-toggle="tab" href="#menu1">2nd</a></li>
+				    <li><a data-toggle="tab" href="#menu2">3rd</a></li>
+				    <li><a data-toggle="tab" href="#menu3">4th</a></li>
+				    <li><a data-toggle="tab" href="#menu4">5th</a></li>
+				    <li><a data-toggle="tab" href="#menu5">6th</a></li>
+				    <li class="active"><a data-toggle="tab" href="#menu6">7th</a></li>
+			 	</ul>
 
-					<!-- <p id="alt-caption">
-						
-					</p> -->
-				</div>
-			</div> <!-- End of slider -->
-			<div class="post">
-				<h2 class="h2">Shyamoli Polytechnic Institute</h2>
-				<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
+			  <div class="tab-content">
+
+			    	<div id="home" class="tab-pane fade">
+			    		
+			    	</div><!-- End of home -->
+			    	<div id="menu1" class="tab-pane fade">
+				      	<h3>কুড়িগ্রাম</h3>
+				      	<p>কুড়িগ্রাম সদর (৮), উলিপুর (১৩), রাজারহাট (৭), নাগেশরী (১৪), ফুলবাড়ী (৬), ভুরুঙ্গামারী (১০) এবং রৌমারী (৫)</p>
+				    </div><!-- End of menu1 -->
+				    <div id="menu2" class="tab-pane fade">
+				      	<h3>লালমনিরহাট</h3>
+				      	<p>লালমনিরহাট সদর (৯), আদিতমারী (৮), পাটগ্রাম (৮) এবং হাতিবান্ধা (১৩)</p>
+				    </div><!-- End of menu2 -->
+				    <div id="menu3" class="tab-pane fade">
+				      	<h3>গাইবান্ধা</h3>
+				      	<p>গাইবান্ধা সদর (১৩), পলাশবাড়ী (৯), গোবিন্দগঞ্জ (১৭), সাঘাটা (৭) এবং ফুলছড়ি (৭)</p>
+				    </div><!-- End of menu3 --> 
+				   	<div id="menu4" class="tab-pane fade">
+				      	<h3>নীলফামারী</h3>
+				      	<p>নীলফামারী সদর (১৫), ডোমার (১০), ডিমলা (১০) এবং সৈয়দপুর (৫)</p>
+				    </div><!-- End of menu4 --> 
+				    <div id="menu5" class="tab-pane fade">
+				      	
+				    </div><!-- End of menu5 --> 
+				    <div id="menu6" class="tab-pane fade in active">
+				      	<div class="students">
+				      		<?php 
+								$query = "select *from students where dep = 'cmt' and sem='7'";
+								$result = mysqli_query($conn,$query);
+								while($row = mysqli_fetch_assoc($result)) {
+							 ?>
+				      		<div class="col-md-3 student">
+				      			<img src="<?php echo "admin/".$row['file']; ?>" class="img-thumbnail">
+				      			<p class="text-center"><a data-toggle="modal" data-target="#myModal<?php echo $row['id']; ?>" style="cursor: pointer;" class="btn btn-info"><span class="glyphicon glyphicon-zoom-in"></span>&nbsp; View</a></p>			                    			                   
+			                    <div class="modal fade" id="myModal<?php echo $row['id']; ?>" role="dialog">
+							    	<div class="modal-dialog">				    
+									      <!-- Modal content-->
+									      <div class="modal-content">
+									        <div class="modal-header bg-primary">
+									        	<button type="button" class="close" data-dismiss="modal">&times;</button>													        	
+									        </div>
+						                    <div class="modal-body">									        										        
+									        	<img src="<?php echo "admin/".$row['file']; ?>" class="img-thumbnail">
+									        	<br>	<br>
+									        	<table class="table table-bordered">
+									        		<tr>
+									        			<th class="text-center">Name</th>
+														<th class="text-center">Mobile</th>
+														<th class="text-center">Email</th>
+														<th class="text-center">Address</th>
+														<th class="text-center">Department</th>
+														<th class="text-center">Semester</th>
+									        		</tr>
+									        		<tr>
+									        			<td class="text-center"><?php echo $row['name']; ?></td>
+														<td class="text-center"><?php echo $row['mobile']; ?></td>
+														<td class="text-center"><?php echo $row['email']; ?></td>
+														<td class="text-center"><?php echo $row['address']; ?></td>
+														<?php 
+															$dep = "";
+															if($row['dep'] == "cmt") {
+																$dep = "Computer";
+															} else if($row['dep'] == "cv") {
+																$dep = "Civil";
+															} else if($row['dep'] == "et") {
+																$dep = "Electrical";
+															} else if($row['dep'] == "mc") {
+																$dep = "Mechanical";
+															} else if($row['dep'] == "gd") {
+																$dep = "Garments Design";
+															} else if($row['dep'] == "ect") {
+																$dep = "Electronics";
+															} else if($row['dep'] == "te") {
+																$dep = "Textile";
+															}
+														 ?>
+														<td class="text-center"><?php echo $dep; ?></td>
+														<?php 
+															$last_word = "";
+															if($row['sem'] == 1) {
+																$last_word = "st";
+															} else if($row['sem'] == 2) {
+																$last_word = "nd";
+															} else if($row['sem'] == 3) {
+																$last_word = "rd";
+															} else {
+																$last_word = "th";
+															}
+														 ?>
+														<td class="text-center"><?php echo $row['sem']."".$last_word; ?></td>
+									        		</tr>
+									        		
+									        	</table>									        											        												       
+									        </div> <!-- End of modal-body -->
+									        <div class="modal-footer">							        
+									        	<button type="button" class="btn btn-default" data-dismiss="modal">close</button>	
+									        </div>
+							      		</div>						      
+						    		</div>
+								</div> <!-- End of modal -->
+				      		</div>
+				      		<?php } ?>
+				      		
+				      		
+				      	</div>
+				    </div><!-- End of menu6 --> 
+				    
+
+			  </div> <!-- End of tab-content -->
 			<div class="clearfix"></div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<div class="col-md-2 right-sidebar">
 			<div class="panel-group" id="accordion1" style="margin:0; padding:0;background: white;">
 			    

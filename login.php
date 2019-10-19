@@ -1,4 +1,18 @@
-<?php session_start(); ?>
+<?php
+require_once 'admin/includes/functions.php';
+ if(isset($_POST['submit'])) {
+ 	$user = "asad";
+ 	$password = "12345";
+ 	if($_POST['username'] == "asad" && $_POST['password'] == 12345) {
+ 		$_SESSION['auth'] = 1;
+ 		redirect("admin/index.php");	
+ 	} else {
+ 		$error = "Username or Password Doesnot Match.";
+ 	}
+ 	
+ }
+
+?>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +65,7 @@
 	</div> 
 	<div class="row header-part">
 	<div class="col-md-1 col-xs-1">
-			<img src="img/q.jpg" class="himg" style="width:100px;height:100px;">
+			<img src="img/k.png" class="himg">
 		</div>
 		<div class="col-md-11 col-xs-11 right-part">
 			<h1 class="text-center hidden-xs">SHYAMOLI IDEAL POLYTECHNIC INSTITUTE</h1>
@@ -75,17 +89,13 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#" class="mylink"><i class="fa fa-home"></i>&nbsp; Home</a></li>					
+						<li><a href="index.php" class="mylink"><i class="fa fa-home"></i>&nbsp; Home</a></li>					
 						<li><a href="#" class="mylink"><i class="fa fa-th-large"></i>&nbsp; Facilities</a></li>
 						<li><a href="#" class="mylink"><i class="fa fa-graduation-cap"></i>&nbsp; Educaton</a></li>
 						<li><a href="#" class="mylink"><i class="fa fa-film"></i>&nbsp; Gallary</a></li>
 						<li><a href="#" class="mylink"><i class="fa fa-phone"></i>&nbsp;  Contact us </a></li>
 						<li><a href="#" class="mylink"><i class="fa fa-sign-in"></i>&nbsp; Sin-up </a></li>
-						<?php if(!empty($_SESSION['auth'])) { ?> 
-							<li><a href="login.php" class="mylink"><i class="fa fa-sign-in"></i>&nbsp; Login </a></li>
-						<?php } else { ?> 
-							<li><a href="admin/index.php" class="mylink"><i class="fa fa-user"></i>&nbsp; Admin </a></li>
-						<?php } ?>
+						<li><a href="login.php" class="mylink"><i class="fa fa-sign-in"></i>&nbsp; Login </a></li>
 					</ul>					
 					
 				</div><!-- /.navbar-collapse -->
@@ -94,47 +104,42 @@
 	</div><!-- End of navigation -->
 	<div class="row main-container">
 		<div class="col-md-2 left-sidebar" style="min-height: 700px;">
-			<h4>Departments</h4>
+			<h3>Important Links</h3>
 			<ul class="imp-link">
-				<li><a href="department.php">Computer</a></li>
-				<li><a href="">Civil</a></li>
-				<li><a href="">Electrical</a></li>
-				<li><a href="">Mechanical</a></li>
-				<li><a href="">Garments Design</a></li>
-				<li><a href="">Electronics</a></li>
-				<li><a href="">Textile</a></li>
+				<li><a href="">student</a></li>
+				<li><a href="">student</a></li>
+				<li><a href="">student</a></li>
+				<li><a href="">student</a></li>
+				<li><a href="">student</a></li>
+				<li><a href="">student</a></li>
+				<li><a href="">student</a></li>
+				<li><a href="">student</a></li>
 			</ul>
 		</div>
 		<div class="col-md-8">
-			<div id="slider">
-				<div class="cycle-slideshow" data-cycle-caption="#alt-caption" data-cycle-caption-template="{{alt}}" data-cycle-swipe="true" data-cycle-fx="TileSlide" data-cycle-timeout=2000>		
-				    <img src="img/l.jpg" alt="this is picture">
-				    <img src="img/p.png" alt="">
-				    <img src="img/04.jpg" alt="">
-				    
-					<span class="cycle-prev" id="prev">Prev</span>
-					<span class="cycle-next" id="next">Next</span>
-
-					<!-- <p id="alt-caption">
-						
-					</p> -->
+			<h2 class="text-center"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login In</h2>
+			<form method="post" class="col-md-8 col-md-offset-2">
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon">Username</div>
+						<input type="text" name="username" placeholder="Username" class="form-control">
+					</div>					
 				</div>
-			</div> <!-- End of slider -->
-			<div class="post">
-				<h2 class="h2">Shyamoli Polytechnic Institute</h2>
-				<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon">Password</div>
+						<input type="text" name="password" placeholder="Password" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" name="submit" class="btn btn-block btn-primary" value="Login">
+				</div>
+				<?php 
+					if(isset($error)) { ?>
+						<p class="text-danger text-center"><?php echo $error; ?></p>
+					<?php }
+				 ?>
+			</form>
 			<div class="clearfix"></div>
 		</div>
 		<div class="col-md-2 right-sidebar">
